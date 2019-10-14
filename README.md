@@ -47,12 +47,11 @@ And then, start generating bitcoin addresses and private keys (in `WIF` format) 
 ```
 Feeling Tipsy?
 ==============
-Useful and feeling tipsy? You can tip me: <a href="bitcoin:16adEf81iiCo26MEi3hUiJyawZKREwGZQc">16adEf81iiCo26MEi3hUiJyawZKREwGZQc</a>
+Useful and feeling tipsy? You can tip me: [16adEf81iiCo26MEi3hUiJyawZKREwGZQc](bitcoin:16adEf81iiCo26MEi3hUiJyawZKREwGZQc)
 
 What Is More
 ============
-
-I have a php scripts setup that randomly generate bitcoins addresses and check their balances from Blockchin API. The scripts are designed to run non-stop on normal web hosting. They can check about 576000 addresses per day, ie. 100 address per every 15 seconds (due to API request limitation). If there is any bitcoin address(es) with balance in the generated addresses, it logs( or records) the address and private key (wif) of those addresses in a file for you. Let me know if you want to order the setup at dguyonthenet[at]gmail[dot]com.
+I have a php scripts setup that randomly generate bitcoins addresses and check their balances from Blockchain API. The scripts are designed to run non-stop on normal web hosting. It can check about 576000 addresses per day, ie. 100 address per every 15 seconds (due to API request limitation). If there is any bitcoin address(es) with balance in the generated addresses, it logs( or records) the address and private key (wif) of those addresses in a file for you. Let me know if you want to order the setup at dguyonthenet[at]gmail[dot]com.
 
 
 License
