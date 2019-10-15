@@ -759,8 +759,7 @@ class Curve {
         //private key has to be passed as an hexadecimal number
         if(gmp_cmp(gmp_init($k, 16), gmp_sub($this->n, gmp_init(1, 10))) === 1)
         {
-           // throw new \Exception('Private Key is not in the 1,n-1 range');
-           $this->setPrivateKeyNumber();
+           throw new \Exception('Private Key is not in the 1,n-1 range');
         }
         $this->k = $k;
     }
@@ -773,13 +772,12 @@ class Curve {
      */
      
     public function setPrivateKeyNumber($bigNumberStr=2) {
-		
-   		$dec = $bigNumberStr;
-		$hex = '';
+    	$dec = $bigNumberStr;
+    	$hex = '';
     	do {
     		$last = bcmod($dec, 16);
-        	$hex = dechex($last).$hex;
-        	$dec = bcdiv(bcsub($dec, $last), 16);
+    		$hex = dechex($last).$hex;
+    		$dec = bcdiv(bcsub($dec, $last), 16);
     	} while($dec>0);
     		
     	while(strlen($hex) < 64)
