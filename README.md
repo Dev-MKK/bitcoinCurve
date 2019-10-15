@@ -49,22 +49,22 @@ And here is how we can easily generate bitcoin addresses for first private keys 
 
 ```php
 require 'curve.php';
+
+$curve = new Curve();
+$compressed = false;
+
+$i = 1;
+do {
+	$bigNum = strval($i);
+	$curve->setPrivateKeyNumber($bigNum);
+	$address = $curve->getAddress($compressed);
+	$wif = $curve->getWif($compressed);
 	
-	$curve = new Curve();
-	$compressed = false;
-	
-	$i = 1;
-	do {
-			$bigNum = strval($i);
-			$curve->setPrivateKeyNumber($bigNum);
-			$address = $curve->getAddress($compressed);
-			$wif = $curve->getWif($compressed);
-			
-			echo 'Address: ' . $address;
-			echo '<br>';
-			echo 'WIF: ' . $wif;
-			$i++;
-		} while($i <= 100);
+	echo 'Address: ' . $address;
+	echo '<br>';
+	echo 'WIF: ' . $wif;
+	$i++;
+} while($i <= 100);
 
 ```
 Feeling Tipsy?
