@@ -39,6 +39,7 @@ And then, start generating bitcoin addresses and private keys (in `WIF` format) 
 	echo 'Address: ' . $address;
 	echo '<br>';
 	echo 'WIF: ' . $wif;
+	echo '<br>';
 	
 	// OUTPUT
 	// Address: 13anpZuJZA24SjHhveLfXK5PEFmfZNvVbP
