@@ -45,13 +45,35 @@ And then, start generating bitcoin addresses and private keys (in `WIF` format) 
 	// WIF: 5HpHagT65TahBHna79BG64fPig5NYF6dwJ6GGbcGhzNEnD79KuC
 	
 ```
+And here is how we can easily generate bitcoin addresses for first private keys 1 through 100 in PHP ...
+
+```php
+require 'curve.php';
+	
+	$curve = new Curve();
+	$compressed = false;
+	
+	$i = 1;
+	do {
+			$bigNum = strval($i);
+			$curve->setPrivateKeyNumber($bigNum);
+			$address = $curve->getAddress($compressed);
+			$wif = $curve->getWif($compressed);
+			
+			echo 'Address: ' . $address;
+			echo '<br>';
+			echo 'WIF: ' . $wif;
+			$i++;
+		} while($i <= 100);
+
+```
 Feeling Tipsy?
 ==============
 Useful and feeling tipsy? You can tip me: [16adEf81iiCo26MEi3hUiJyawZKREwGZQc](bitcoin:16adEf81iiCo26MEi3hUiJyawZKREwGZQc)
 
 What Is More
 ============
-I have a php scripts setup that randomly generate bitcoins addresses and check their balances from Blockchain API. The scripts are designed to run non-stop on normal web hosting. It can check about 576000 addresses per day, ie. 100 address per every 15 seconds (due to API request limitation). If there is any bitcoin address(es) with balance in the generated addresses, it logs( or records) the address and private key (wif) of those addresses in a file for you. Let me know if you want to order the setup at dguyonthenet[at]gmail[dot]com.
+I have a php scripts setup that randomly generate bitcoins addresses and check their balances from Blockchain API. The scripts are designed to run non-stop on normal web hosting. It can check about 576000 addresses per day, ie. 100 addresses per every 15 seconds (due to API request limitation). If there is any bitcoin address(es) with balance in the generated addresses, it logs( or records) the address and private key (wif) of those addresses in a file for you. Let me know if you want to order the setup at dguyonthenet[at]gmail[dot]com.
 
 
 License
